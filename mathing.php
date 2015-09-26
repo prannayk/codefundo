@@ -15,7 +15,7 @@
 		$mark = 0;
 		foreach ($stu_answers as $quesid => $ans)
 			if($result[$quesid]==$ans)	$mark+=$marks[$quesid];
-		if($myo->Update("student",array($quizid=>$mark),array('student' => $studentid)))	print_r('Marks');
+		if($myo->Update($quizid,array('marks'=>$mark),array('student_id' => $studentid)))	print_r('Marks');
 		else 	die('fatal');
 	}
 ?>

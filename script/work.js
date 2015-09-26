@@ -1,22 +1,35 @@
 $(function(){
-	var i =2;
-	var b = '<div id="text' + i+ '"><p id="text'+ i + '">Question</p><input type="text" id="text' + i + '" style="visibility:hidden" /><a href="#" id="text' + i + '" class="non-active edlink">Edit</a><br></div>';
-	// var c = '<div id="opt1"><select id="opt1"><option>-Select-</option></select><p><a href="#" id="opt1" class='edlink inact-opt'>Edit</a></p><br><div class="optlist" id="opt1"></div></div>';
-	var c = '<div id="check1"><p id="text1">Question</p><input type="text" id="text1" style="visibility:hidden" /><a href="#" id="text1" class="non-active edlink">Edit</a><br><br><div class="optlist" id="check1"><input type="text" placeholder="Enter value" id="check1"/><a href="#" class="addopt" id="check1">add</a></div></div>';
+	var i =0;
+	var b = '<div id="text' + i+ '" class="text"><p id="text'+ i + '">Question</p><input type="text" id="text' + i + '" style="visibility:hidden" /><a href="#" id="text' + i + '" class="non-active edlink">Edit</a><br></div>';
 	$("#txtadd").click(function(){
-		$(".main").append(b);
+		i++;
+		$(".main").append('<div id="text' + i+ '" class="text"><p id="text'+ i + '">Question</p><input type="text" id="text' + i + '" style="visibility:hidden" /><a href="#" id="text' + i + '" class="non-active edlink">Edit</a><br></div>');
+		some();
+	})
+	$("#textadd").click(function(){
+		i++;
+		$(".main").append('<div id="text' + i+ '" class="text"><p id="text'+ i + '">Question</p><input type="text" id="text' + i + '" style="visibility:hidden" /><a href="#" id="text' + i + '" class="non-active edlink">Edit</a><br></div>');
 		some();
 	})
 	$("#optadd").click(function(){
-		$(".main").append(c);
+		i++
+		$(".main").append('<div id="opt'+i+'" class="option"><select id="opt'+i+'"><option>-Select-</option></select><p><a href="#" id="opt'+i+'" class="edlink inact-opt">Edit</a></p><br><div class="optlist" id="opt'+i+'"></div></div>');
 		some();
 	})
-	$("textadd").click(function(){
-		$(".main").append(d);
+	$("#checkadd").click(function(){
+		// console.log("shit");
+		i++;
+		$(".main").append('<div id="check'+i+'" class="check"><p id="check'+i+'">Question</p><input type="text" id="check'+i+'" style="visibility:hidden" /><a href="#" id="check'+i+'" class="non-active edlink">Edit</a><br><br><div class="optlist" id="check'+i+'"><input type="text" placeholder="Enter value" id="check'+i+'"/><a href="#" class="addopt" id="check'+i+'">add</a></div></div>');
 		some();
 	})
+	$('#radadd').click(function(){
+		i++;
+		$(".main").append('<div id="rad'+i+'" class="rad"><p id="rad'+i+'">Question</p><input type="text" id="rad'+i+'" style="visibility:hidden" /><a href="#" id="rad'+i+'" class="non-active edlink">Edit</a><br><br><div class="optlist" id="rad'+i+'"><input type="text" placeholder="Enter value" id="rad'+i+'"/><a href="#" class="addopt" id="rad'+i+'">add</a></div></div>');
+		some();	
+	});
 	function some(){
 		$('.addopt').click(function(){
+			console.log('some');
 			var id = $(this).attr("id");
 			var some;
 			if($('.optlist#'+id).children('p').length > 0)
@@ -24,7 +37,6 @@ $(function(){
 			else
 				some = "0";
 			var i = 1 + parseInt(some);
-			console.log(i);
 			$(".optlist#" + id).append("<p id='"+i+"'><span>"+($("input[type='text']#" + id).val())+ "</span><a href='#' id='"+i +"' class='removeopt'>--</a></p>");
 			$("input[type='text']#" + id).val("");
 			$('.removeopt').click(function(){
@@ -38,9 +50,11 @@ $(function(){
 		});
 		$('.edlink').click(function(){
 			if($(this).hasClass("non-active")){
+				// console.log('fkghdfkj');
 				$(this).removeClass("non-active");
 				$(this).addClass("active");
 				var some = $(this).attr("id");
+				console.log(some);
 				$(this).html("Save");
 				$("p#" + some).css("visibility","hidden");
 				$("input#" + some).css("visibility","visible");
@@ -61,7 +75,7 @@ $(function(){
 				$(this).html("Done");
 				var some = $(this).attr("id");
 				var len = $("select#" + some).children("option").length;
-				$(".optlist#"+some).append('<input type="text" placeholder="Enter value" id="opt1"/><a href="#" class="addopt" id="opt1">add</a>');
+				$(".optlist#"+some).append('<input type="text" placeholder="Enter value" id="'+some+'"/><a href="#" class="addopt" id="'+some+'">add</a>');
 				for(var i=2;i<=len;i++)
 					$(".optlist#" + some).append("<p id='"+i+"'><span>"+($("select#" + some).children("option:nth-of-type(" +i+ ")").html())+ "</span><a href='#' id='"+i +"' class='removeopt'>--</a></p>");
 				$('.removeopt').click(function(){
@@ -69,14 +83,14 @@ $(function(){
 					$("p#"+some).remove();
 				});
 				$('.addopt').click(function(){
+					console.log('some');
 					var id = $(this).attr("id");
+					var some;
 					if($('.optlist#'+id).children('p').length > 0)
 						some = $(".optlist#"+id).children("p").last().attr("id");
 					else
 						some = "0";
-			var i = 1 + parseInt(some);
 					var i = 1 + parseInt(some);
-					// console.log(i);
 					$(".optlist#" + id).append("<p id='"+i+"'><span>"+($("input[type='text']#" + id).val())+ "</span><a href='#' id='"+i +"' class='removeopt'>--</a></p>");
 					$("input[type='text']#" + id).val("");
 					$('.removeopt').click(function(){
@@ -103,9 +117,54 @@ $(function(){
 	}
 	some();
 	$("#submit").click(function(){
-		var body = "<div class='main'>"
-		$("")
+		var body = "<div class='main'>";
+		var text = 0;
+		var check = 0;
+		var textarea = 0;
+		$('.main').children('div').each(function(){
+			if($(this).hasClass('check')){
+				console.log()
+				var id = $(this).attr('id');
+				var some = 0;
+				check++;
+				$('.optlist#'+id).children('p').each(function(){
+					some++;
+					body = body + '<label for="check'+check+some+'">' +($(this).children('span').html())+'</label>';
+					body = body + '<input type="checkbox" name="check'+check+some+'" /><br>';
+				})
+			}else if($(this).hasClass('text')){
+				var id = $(this).attr('id');
+				body = body + '<p>'+ ($("p#"+id).html()) + '</p>';
+				text++;
+				body = body + '<input type="text" name="text'+(text)+'"/>';
+			} else if($(this).hasClass('radio')){
+				var id = $(this).attr('id');
+				var some = 0;
+				$('.optlist#'+id).children('p').each(function(){
+					some++;
+					body = body + '<label for="radio'+some+'">' +($(this).children('span').html())+'</label>';
+					body = body + '<input type="radio" name="radio'+some+'" value="'+($(this).children('span').html())+'" /><br>';
+				})
+			} else if($(this).hasClass("textarea")){
+				var id = $(this).attr("id");
+				body = body + '<p>'+ ($("p#"+id).html()) + '</p>';
+				textarea++;
+				body = body + '<input type="text" value="text'+(textarea)+'"/>'; 
+			}
+			else if($(this).hasClass('option')){
+				var id = $(this).attr('id');
+				body = body + '<select>';
+				body = body + $('select#'+id).html();
+				body = body + '</select>';
+			}
+		});
 		body = body + "</div>";
+		$('input#body').val(body);
+		console.log($('input#body').val());
+		$('input#title').val($('title').html());
+		$('input#stylesheet').val($('link').attr('href'));
+		$('input#script').val($('script#main').attr('src'));
+		$('#target').submit();
 	})
 })
 

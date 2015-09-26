@@ -34,6 +34,24 @@ nav ul li a:hover{
 	background: linear-gradient(to bottom,black,black);
 	color: white;
 }
+.btnedt	{
+	display: inline-block;
+	width: 10%;
+	height: 40px;
+	text-align: center;
+}
+.btnedt a {
+display: block;
+	padding: 10px;
+	background-color: #aaa;
+	width: 100%;
+	text-align: center;
+	color: #222;
+}
+#btnedt a:hover {
+	background-color: #222;
+	color: #ccc;
+}
 #btn0	{
 	display: inline-block;
 	width: 20%;

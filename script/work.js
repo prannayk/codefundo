@@ -1,30 +1,30 @@
 $(function(){
 	var i =0;
-	var b = '<div id="text' + i+ '" class="text"><p id="text'+ i + '">Question</p><input type="text" id="text' + i + '" style="visibility:hidden" /><a href="#" id="text' + i + '" class="non-active edlink">Edit</a><br></div>';
+	var b = '<div id="text' + i+ '" class="text"><p id="text'+ i + '">Question</p><input type="text" id="text' + i + '" style="visibility:hidden" /><span class="btnedt"><a href="#" id="text' + i + '" class="non-active edlink">Edit</a></span><br></div>';
 	$("#txtadd").click(function(){
 		i++;
-		$(".main").append('<div id="text' + i+ '" class="text"><p id="text'+ i + '">Question</p><input type="text" id="text' + i + '" style="visibility:hidden" /><a href="#" id="text' + i + '" class="non-active edlink">Edit</a><br></div>');
+		$(".main").append('<div id="text' + i+ '" class="text"><p id="text'+ i + '">Question</p><input type="text" id="text' + i + '" style="visibility:hidden" /><span class="btnedt"><a href="#" id="text' + i + '" class="non-active edlink">Edit</a></span><br></div>');
 		some();
 	})
 	$("#textadd").click(function(){
 		i++;
-		$(".main").append('<div id="text' + i+ '" class="text"><p id="text'+ i + '">Question</p><input type="text" id="text' + i + '" style="visibility:hidden" /><a href="#" id="text' + i + '" class="non-active edlink">Edit</a><br></div>');
+		$(".main").append('<div id="text' + i+ '" class="text"><p id="text'+ i + '">Question</p><input type="text" id="text' + i + '" style="visibility:hidden" /><span class="btnedt"><a href="#" id="text' + i + '" class="non-active edlink">Edit</a></span><br></div>');
 		some();
 	})
 	$("#optadd").click(function(){
 		i++
-		$(".main").append('<div id="opt'+i+'" class="option"><select id="opt'+i+'"><option>-Select-</option></select><p><a href="#" id="opt'+i+'" class="edlink inact-opt">Edit</a></p><br><div class="optlist" id="opt'+i+'"></div></div>');
+		$(".main").append('<div id="opt'+i+'" class="option"><select id="opt'+i+'"><option>-Select-</option></select><p><span class="btnedt"><a href="#" id="opt'+i+'" class="edlink inact-opt"> Edit</a></span></p><br><div class="optlist" id="opt'+i+'"></div></div>');
 		some();
 	})
 	$("#checkadd").click(function(){
 		// console.log("shit");
 		i++;
-		$(".main").append('<div id="check'+i+'" class="check"><p id="check'+i+'">Question</p><input type="text" id="check'+i+'" style="visibility:hidden" /><a href="#" id="check'+i+'" class="non-active edlink">Edit</a><br><br><div class="optlist" id="check'+i+'"><input type="text" placeholder="Enter value" id="check'+i+'"/><a href="#" class="addopt" id="check'+i+'">add</a></div></div>');
+		$(".main").append('<div id="check'+i+'" class="check"><p id="check'+i+'">Question</p><input type="text" id="check'+i+'" style="visibility:hidden" /><span class="btnedt"><a href="#" id="check'+i+'" class="non-active edlink">Edit</a></span><br><br><div class="optlist" id="check'+i+'"><input type="text" placeholder="Enter value" id="check'+i+'"/><span class="btnedt"><a href="#" class="addopt" id="check'+i+'">add</a></span></div></div>');
 		some();
 	})
 	$('#radadd').click(function(){
 		i++;
-		$(".main").append('<div id="rad'+i+'" class="rad"><p id="rad'+i+'">Question</p><input type="text" id="rad'+i+'" style="visibility:hidden" /><a href="#" id="rad'+i+'" class="non-active edlink">Edit</a><br><br><div class="optlist" id="rad'+i+'"><input type="text" placeholder="Enter value" id="rad'+i+'"/><a href="#" class="addopt" id="rad'+i+'">add</a></div></div>');
+		$(".main").append('<div id="radq'+i+'" class="rad"><p id="rad'+i+'">Type the main question:</p><input type="text" id="rad'+i+'" style="visibility:hidden" /><span class="btnedt"><a href="#" id="radE'+i+'" class="non-active edlink">Edit</a></span><br><br><div class="optlist" id="rad'+i+'"><input type="text" placeholder="Enter value" id="rad'+i+'"/><span class="btnedt"><a href="#" class="addopt" id="rad'+i+'">add</a></span></div></div>');
 		some();	
 	});
 	function some(){
@@ -37,7 +37,7 @@ $(function(){
 			else
 				some = "0";
 			var i = 1 + parseInt(some);
-			$(".optlist#" + id).append("<p id='"+i+"'><span>"+($("input[type='text']#" + id).val())+ "</span><a href='#' id='"+i +"' class='removeopt'>--</a></p>");
+			$(".optlist#" + id).append("<p id='"+i+"'><span>"+($("input[type='text']#" + id).val())+ "</span><span class='btnedt'><a href='#' id='"+i +"' class='removeopt'>R.O.</a></span></p>");
 			$("input[type='text']#" + id).val("");
 			$('.removeopt').click(function(){
 				var some = $(this).attr("id");
@@ -167,10 +167,3 @@ $(function(){
 		$('#target').submit();
 	})
 })
-
-
-
-
-
-
-

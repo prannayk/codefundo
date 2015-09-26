@@ -158,6 +158,7 @@ $(function(){
 				body = body + '</select>';
 			}
 		});
+		body = body + '<input type="hidden" value="'+($('#hiddn').val())+'">';
 		body = body + "</div>";
 		$('input#body').val(body);
 		console.log($('input#body').val());

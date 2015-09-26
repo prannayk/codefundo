@@ -1,0 +1,27 @@
+//basic layout
+
+*{
+	padding: none;
+	margin: none;
+}
+body *{
+	margin: none;
+	padding: none;
+}
+footer{
+	border-top:3px solid #39c;
+	box-shadow: 0 0 10px rgba(0,0,0,0.3);
+	background: #000;
+	display: block;
+	width: 100%;
+}
+a{
+	color: #000
+}
+a:hover{
+	color:#39c;
+}
+input:focus{
+	border: none;
+	outline: 0;
+}

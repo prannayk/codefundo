@@ -10,3 +10,9 @@ input{
 a{
 	display: inline-block;
 }
+#hidden{
+	visibility: hidden;;
+	display: block;
+	width: 0;
+	height: 0;
+}

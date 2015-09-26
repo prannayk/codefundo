@@ -24,7 +24,7 @@ $(function(){
 	})
 	$('#radadd').click(function(){
 		i++;
-		$(".main").append('<div id="radq'+i+'" class="rad"><p id="rad'+i+'">Type the main question:</p><input type="text" id="rad'+i+'" style="visibility:hidden" /><span class="btnedt"><a href="#" id="radE'+i+'" class="non-active edlink">Edit</a></span><br><br><div class="optlist" id="rad'+i+'"><input type="text" placeholder="Enter value" id="rad'+i+'"/><span class="btnedt"><a href="#" class="addopt" id="rad'+i+'">add</a></span></div></div>');
+		$(".main").append('<div id="radE'+i+'" class="rad"><p id="radE'+i+'">Type the main question:</p><input type="text" id="radE'+i+'" style="visibility:hidden" /><span class="btnedt"><a href="#" id="radE'+i+'" class="non-active edlink">Edit</a></span><br><br><div class="optlist" id="rad'+i+'"><input type="text" placeholder="Enter value" id="rad'+i+'"/><span class="btnedt"><a href="#" class="addopt" id="rad'+i+'">add</a></span></div></div>');
 		some();	
 	});
 	function some(){
@@ -164,6 +164,6 @@ $(function(){
 		$('input#title').val($('title').html());
 		$('input#stylesheet').val($('link').attr('href'));
 		$('input#script').val($('script#main').attr('src'));
-		$('#target').submit();
+		// $('#target').submit();
 	})
 })

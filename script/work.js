@@ -103,7 +103,9 @@ $(function(){
 	}
 	some();
 	$("#submit").click(function(){
-		var body = "<div class='main'></div>"
+		var body = "<div class='main'>"
+		$("")
+		body = body + "</div>";
 	})
 })
 

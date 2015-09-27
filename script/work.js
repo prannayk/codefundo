@@ -3,54 +3,34 @@ $(function(){
 	var b = '<div id="text' + i+ '" class="text"><p id="text'+ i + '">Question</p><input type="text" id="text' + i + '" style="visibility:hidden" /><a href="#" id="text' + i + '" class="non-active edlink">Edit</a><br></div>';
 	$("#txtadd").click(function(){
 		i++;
-<<<<<<< Updated upstream
-		$(".main").append('<tr><span id="text' + i+ '" class="text"><td><p id="text'+ i + '">Question</p><input type="text" id="text' + i + '" style="visibility:hidden" /></td><td><span class="btnedt"><a href="#" id="text' + i + '" class="non-active edlink">Edit</a></span><br></td></span></tr>');
-=======
 		$(".main").append('<div id="text' + i+ '" class="text"><p id="text'+ i + '">Question</p><input type="text" id="text' + i + '" style="visibility:hidden" /><a href="#" id="text' + i + '" class="non-active edlink">Edit</a><br></div>');
->>>>>>> Stashed changes
 		some();
 	})
 	$("#textadd").click(function(){
 		i++;
-<<<<<<< Updated upstream
-		$(".main").append('<tr><span id="text' + i+ '" class="text"><td><p id="text'+ i + '">Question</p><input type="text" id="text' + i + '" style="visibility:hidden" /></td><td><span class="btnedt"><a href="#" id="text' + i + '" class="non-active edlink">Edit</a></span><br></td></span></tr>');
-=======
 		$(".main").append('<div id="text' + i+ '" class="text"><p id="text'+ i + '">Question</p><input type="text" id="text' + i + '" style="visibility:hidden" /><a href="#" id="text' + i + '" class="non-active edlink">Edit</a><br></div>');
->>>>>>> Stashed changes
 		some();
 	})
 	$("#optadd").click(function(){
 		i++
-<<<<<<< Updated upstream
-		$(".main").append('<tr><span id="opt'+i+'" class="option"><td><select id="opt'+i+'"><option>-Select-</option></select></td><td><p class="btnedt"><a href="#" id="opt'+i+'" class="edlink inact-opt"> Edit</a></p></td><div class="optlist" id="opt'+i+'"></div></tr>');
-=======
 		$(".main").append('<div id="opt'+i+'" class="option"><select id="opt'+i+'"><option>-Select-</option></select><p><a href="#" id="opt'+i+'" class="edlink inact-opt">Edit</a></p><br><div class="optlist" id="opt'+i+'"></div></div>');
->>>>>>> Stashed changes
 		some();
 	})
 	$("#checkadd").click(function(){
 		// console.log("shit");
 		i++;
-<<<<<<< Updated upstream
-		$(".main").append('<tr><td><span id="checkE'+i+'" class="check"><p id="checkE'+i+'">Question</p><input type="text" id="checkE'+i+'" style="visibility:hidden" /></td><td><span class="btnedt"><a href="#" id="checkE'+i+'" class="non-active edlink">Edit</a></span></td></tr><tr><td><span class="optlist" id="check'+i+'"><input type="text" placeholder="Enter value" id="check'+i+'"/></td><td><span class="btnedt"><a href="#" class="addopt" id="check'+i+'">add</a></span></span></td></tr>');
-=======
 		$(".main").append('<div id="check'+i+'" class="check"><p id="check'+i+'">Question</p><input type="text" id="check'+i+'" style="visibility:hidden" /><a href="#" id="check'+i+'" class="non-active edlink">Edit</a><br><br><div class="optlist" id="check'+i+'"><input type="text" placeholder="Enter value" id="check'+i+'"/><a href="#" class="addopt" id="check'+i+'">add</a></div></div>');
->>>>>>> Stashed changes
 		some();
 	})
 	$('#radadd').click(function(){
 		i++;
-<<<<<<< Updated upstream
-		$(".main").append('<tr><td><span id="radE'+i+'" class="rad"><p id="radE'+i+'">Type the main question:</p><input type="text" id="radE'+i+'" style="visibility:hidden" /></td><td><span class="btnedt"><a href="#" id="radE'+i+'" class="non-active edlink">Edit</a></span></td></tr><tr><td><div class="optlist" id="rad'+i+'"><input type="text" placeholder="Enter value" id="rad'+i+'"/></td><td><span class="btnedt"><a href="#" class="addopt" id="rad'+i+'">add</a></span></div></span></tr>');
-=======
 		$(".main").append('<div id="rad'+i+'" class="rad"><p id="rad'+i+'">Question</p><input type="text" id="rad'+i+'" style="visibility:hidden" /><a href="#" id="rad'+i+'" class="non-active edlink">Edit</a><br><br><div class="optlist" id="rad'+i+'"><input type="text" placeholder="Enter value" id="rad'+i+'"/><a href="#" class="addopt" id="rad'+i+'">add</a></div></div>');
->>>>>>> Stashed changes
 		some();	
 	});
 	function some(){
 		$('.addopt').click(function(){
 			console.log('some');
-			var id = $(this).attr("id");                                                         
+			var id = $(this).attr("id");
 			var some;
 			if($('.optlist#'+id).children('p').length > 0)
 				some = $(".optlist#"+id).children("p").last().attr("id");
@@ -95,7 +75,7 @@ $(function(){
 				$(this).html("Done");
 				var some = $(this).attr("id");
 				var len = $("select#" + some).children("option").length;
-				$(".optlist#"+some).append('<input type="text" placeholder="Enter value" id="'+some+'"/><span class="btnedt"><a href="#" class="addopt" id="'+some+'">add</a></span>');
+				$(".optlist#"+some).append('<input type="text" placeholder="Enter value" id="'+some+'"/><a href="#" class="addopt" id="'+some+'">add</a>');
 				for(var i=2;i<=len;i++)
 					$(".optlist#" + some).append("<p id='"+i+"'><span>"+($("select#" + some).children("option:nth-of-type(" +i+ ")").html())+ "</span><a href='#' id='"+i +"' class='removeopt'>--</a></p>");
 				$('.removeopt').click(function(){
@@ -111,7 +91,7 @@ $(function(){
 					else
 						some = "0";
 					var i = 1 + parseInt(some);
-					$(".optlist#" + id).append("<br><br><p id='"+i+"' class='btnedt1'>"+($("input[type='text']#" + id).val())+ "<a href='#' id='"+i +"' class='removeopt'>R.O.</a></p>");
+					$(".optlist#" + id).append("<p id='"+i+"'><span>"+($("input[type='text']#" + id).val())+ "</span><a href='#' id='"+i +"' class='removeopt'>--</a></p>");
 					$("input[type='text']#" + id).val("");
 					$('.removeopt').click(function(){
 						var some = $(this).attr("id");
@@ -191,12 +171,9 @@ $(function(){
 		$('input#title').val($('title').html());
 		$('input#stylesheet').val($('link').attr('href'));
 		$('input#script').val($('script#main').attr('src'));
-<<<<<<< Updated upstream
-=======
 		$("input#tit").val($('#hiddn').val());
 		// console.log(ct);
 		$("input#count").val(ct);
->>>>>>> Stashed changes
 		$('#target').submit();
 	})
 })

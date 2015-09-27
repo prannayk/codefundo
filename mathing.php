@@ -1,8 +1,8 @@
 <?php  
 	require('mysql.class.php');
-	$s = array('text1'=>'sldkfj','text2'=>'alkdjs','text3'=>'asjdlksa');
-	$id = 12;
-	$quizid = 4;
+	// $s = array('text1'=>'sldkfj','text2'=>'alkdjs','text3'=>'asjdlksa');
+	// $id = 12;
+	// $quizid = 4;
 	function evaluate($stu_answers,$studentid,$quizid){
 		// $myo = new MySQL();
 		$some = new MySQLi('localhost','root','root','codefundo');
@@ -29,5 +29,5 @@
 		if($myo->Update($quizid,array('marks'=>$mark),array('student_id' => $studentid)))	print_r('Marks');
 		else 	die('fatal');
 	}
-	evaluate($s,$id,$quizid);
+	// evaluate($s,$id,$quizid);
 ?>

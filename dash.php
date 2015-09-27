@@ -11,24 +11,23 @@
 		$names = array();
 		$i = 1;
 		if($r){
-			// print_r('Working');
 			while($s = $r->fetch_object()){
 				$names[$i++] = $s->TABLE_NAME;
 			}
 		}
 	?>
-
+	<ul>
 		<li><a href="test.php">+</a></li>
-	<div class="tile-container bg-darkCobalt" style="width: 640">
-		
 		<?php 
-		$i = 1;
-		while(isset($names[$i])){
-			echo '<div class="tile-small-y bg-darkEmerald"><div class="tile-content iconic"><span class="tile-label">';
-			echo $names[$i++];
-			echo '</span></div></div>';
-		}
-	 ?>
-	</div>
+			$i = 1;
+			while(isset($names[$i])){
+				echo '<li><a href="output.php?viewkey=';
+				echo $names[$i];
+				echo '">';
+				echo $names[$i++];
+				echo '</a></li>';
+			}
+		 ?>
+	</ul>
 </body>
 </html>

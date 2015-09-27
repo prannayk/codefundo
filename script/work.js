@@ -171,8 +171,8 @@ $(function(){
 		$('input#title').val($('title').html());
 		$('input#stylesheet').val($('link').attr('href'));
 		$('input#script').val($('script#main').attr('src'));
-		$("input#tit").val($('#hiddn').val());
-		// console.log(ct);
+		$("input#tit").val(($('#hiddn').val()));
+		// console.log($("input#tit").val());
 		$("input#count").val(ct);
 		$('#target').submit();
 	})

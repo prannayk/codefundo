@@ -17,16 +17,18 @@
 			}
 		}
 	?>
-	<ul>
+
 		<li><a href="test.php">+</a></li>
+	<div class="tile-container bg-darkCobalt" style="width: 640">
+		
 		<?php 
-			$i = 1;
-			while(isset($names[$i])){
-				echo '<li>';
-				echo $names[$i++];
-				echo '</li>';
-			}
-		 ?>
-	</ul>
+		$i = 1;
+		while(isset($names[$i])){
+			echo '<div class="tile-small-y bg-darkEmerald"><div class="tile-content iconic"><span class="tile-label">';
+			echo $names[$i++];
+			echo '</span></div></div>';
+		}
+	 ?>
+	</div>
 </body>
 </html>

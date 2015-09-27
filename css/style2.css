@@ -41,7 +41,7 @@ nav ul li a:hover{
 	text-align: center;
 }
 .btnedt a {
-display: block;
+display: inline-block;
 	padding: 10px;
 	background-color: #aaa;
 	width: 100%;
@@ -69,4 +69,39 @@ display: block;
 #btn0 a:hover {
 	background-color: #222;
 	color: #ccc;
+}
+.main1 tr {
+	display:block;
+	width: 100%;
+}
+td {
+	width: 50%;
+	text-align: center;
+}
+.btnedt1	{
+	display: inline-block;
+	width: 40%;
+	height: 40px;
+	text-align: center;
+}
+.btnedt1 a {
+display: inline-block;
+	padding: 10px;
+	background-color: #aaa;
+	width: 100%;
+	text-align: center;
+	color: #222;
+}
+#btnedt1 a:hover {
+	background-color: #222;
+	color: #ccc;
+}
+p{
+	width: 25%;
+	display: inline-block;
+	text-align: center;
+}
+.removeopt	{
+	width:100%;
+	display: block;
 }

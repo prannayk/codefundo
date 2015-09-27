@@ -1,30 +1,50 @@
 $(function(){
 	var i =0;
-	var b = '<div id="text' + i+ '" class="text"><p id="text'+ i + '">Question</p><input type="text" id="text' + i + '" style="visibility:hidden" /><span class="btnedt"><a href="#" id="text' + i + '" class="non-active edlink">Edit</a></span><br></div>';
+	var b = '<div id="text' + i+ '" class="text"><p id="text'+ i + '">Question</p><input type="text" id="text' + i + '" style="visibility:hidden" /><a href="#" id="text' + i + '" class="non-active edlink">Edit</a><br></div>';
 	$("#txtadd").click(function(){
 		i++;
+<<<<<<< Updated upstream
 		$(".main").append('<tr><span id="text' + i+ '" class="text"><td><p id="text'+ i + '">Question</p><input type="text" id="text' + i + '" style="visibility:hidden" /></td><td><span class="btnedt"><a href="#" id="text' + i + '" class="non-active edlink">Edit</a></span><br></td></span></tr>');
+=======
+		$(".main").append('<div id="text' + i+ '" class="text"><p id="text'+ i + '">Question</p><input type="text" id="text' + i + '" style="visibility:hidden" /><a href="#" id="text' + i + '" class="non-active edlink">Edit</a><br></div>');
+>>>>>>> Stashed changes
 		some();
 	})
 	$("#textadd").click(function(){
 		i++;
+<<<<<<< Updated upstream
 		$(".main").append('<tr><span id="text' + i+ '" class="text"><td><p id="text'+ i + '">Question</p><input type="text" id="text' + i + '" style="visibility:hidden" /></td><td><span class="btnedt"><a href="#" id="text' + i + '" class="non-active edlink">Edit</a></span><br></td></span></tr>');
+=======
+		$(".main").append('<div id="text' + i+ '" class="text"><p id="text'+ i + '">Question</p><input type="text" id="text' + i + '" style="visibility:hidden" /><a href="#" id="text' + i + '" class="non-active edlink">Edit</a><br></div>');
+>>>>>>> Stashed changes
 		some();
 	})
 	$("#optadd").click(function(){
 		i++
+<<<<<<< Updated upstream
 		$(".main").append('<tr><span id="opt'+i+'" class="option"><td><select id="opt'+i+'"><option>-Select-</option></select></td><td><p class="btnedt"><a href="#" id="opt'+i+'" class="edlink inact-opt"> Edit</a></p></td><div class="optlist" id="opt'+i+'"></div></tr>');
+=======
+		$(".main").append('<div id="opt'+i+'" class="option"><select id="opt'+i+'"><option>-Select-</option></select><p><a href="#" id="opt'+i+'" class="edlink inact-opt">Edit</a></p><br><div class="optlist" id="opt'+i+'"></div></div>');
+>>>>>>> Stashed changes
 		some();
 	})
 	$("#checkadd").click(function(){
 		// console.log("shit");
 		i++;
+<<<<<<< Updated upstream
 		$(".main").append('<tr><td><span id="checkE'+i+'" class="check"><p id="checkE'+i+'">Question</p><input type="text" id="checkE'+i+'" style="visibility:hidden" /></td><td><span class="btnedt"><a href="#" id="checkE'+i+'" class="non-active edlink">Edit</a></span></td></tr><tr><td><span class="optlist" id="check'+i+'"><input type="text" placeholder="Enter value" id="check'+i+'"/></td><td><span class="btnedt"><a href="#" class="addopt" id="check'+i+'">add</a></span></span></td></tr>');
+=======
+		$(".main").append('<div id="check'+i+'" class="check"><p id="check'+i+'">Question</p><input type="text" id="check'+i+'" style="visibility:hidden" /><a href="#" id="check'+i+'" class="non-active edlink">Edit</a><br><br><div class="optlist" id="check'+i+'"><input type="text" placeholder="Enter value" id="check'+i+'"/><a href="#" class="addopt" id="check'+i+'">add</a></div></div>');
+>>>>>>> Stashed changes
 		some();
 	})
 	$('#radadd').click(function(){
 		i++;
+<<<<<<< Updated upstream
 		$(".main").append('<tr><td><span id="radE'+i+'" class="rad"><p id="radE'+i+'">Type the main question:</p><input type="text" id="radE'+i+'" style="visibility:hidden" /></td><td><span class="btnedt"><a href="#" id="radE'+i+'" class="non-active edlink">Edit</a></span></td></tr><tr><td><div class="optlist" id="rad'+i+'"><input type="text" placeholder="Enter value" id="rad'+i+'"/></td><td><span class="btnedt"><a href="#" class="addopt" id="rad'+i+'">add</a></span></div></span></tr>');
+=======
+		$(".main").append('<div id="rad'+i+'" class="rad"><p id="rad'+i+'">Question</p><input type="text" id="rad'+i+'" style="visibility:hidden" /><a href="#" id="rad'+i+'" class="non-active edlink">Edit</a><br><br><div class="optlist" id="rad'+i+'"><input type="text" placeholder="Enter value" id="rad'+i+'"/><a href="#" class="addopt" id="rad'+i+'">add</a></div></div>');
+>>>>>>> Stashed changes
 		some();	
 	});
 	function some(){
@@ -37,7 +57,7 @@ $(function(){
 			else
 				some = "0";
 			var i = 1 + parseInt(some);
-			$(".optlist#" + id).append("<p id='"+i+"'><span>"+($("input[type='text']#" + id).val())+ "</span><span class='btnedt'><a href='#' id='"+i +"' class='removeopt'>R.O.</a></span></p>");
+			$(".optlist#" + id).append("<p id='"+i+"'><span>"+($("input[type='text']#" + id).val())+ "</span><a href='#' id='"+i +"' class='removeopt'>--</a></p>");
 			$("input[type='text']#" + id).val("");
 			$('.removeopt').click(function(){
 				var some = $(this).attr("id");
@@ -121,8 +141,10 @@ $(function(){
 		var text = 0;
 		var check = 0;
 		var textarea = 0;
+		var ct = 0;
 		$('.main').children('div').each(function(){
 			if($(this).hasClass('check')){
+				ct++;
 				console.log()
 				var id = $(this).attr('id');
 				var some = 0;
@@ -133,11 +155,13 @@ $(function(){
 					body = body + '<input type="checkbox" name="check'+check+some+'" /><br>';
 				})
 			}else if($(this).hasClass('text')){
+				ct++;
 				var id = $(this).attr('id');
 				body = body + '<p>'+ ($("p#"+id).html()) + '</p>';
 				text++;
 				body = body + '<input type="text" name="text'+(text)+'"/>';
 			} else if($(this).hasClass('radio')){
+				ct++;
 				var id = $(this).attr('id');
 				var some = 0;
 				$('.optlist#'+id).children('p').each(function(){
@@ -146,25 +170,40 @@ $(function(){
 					body = body + '<input type="radio" name="radio'+some+'" value="'+($(this).children('span').html())+'" /><br>';
 				})
 			} else if($(this).hasClass("textarea")){
+				ct++;
 				var id = $(this).attr("id");
 				body = body + '<p>'+ ($("p#"+id).html()) + '</p>';
 				textarea++;
 				body = body + '<input type="text" value="text'+(textarea)+'"/>'; 
 			}
 			else if($(this).hasClass('option')){
+				ct++;
 				var id = $(this).attr('id');
 				body = body + '<select>';
 				body = body + $('select#'+id).html();
 				body = body + '</select>';
 			}
 		});
-		body = body + '<input type="hidden" value="'+($('#hiddn').val())+'">';
+		body = body + '<input type="hidden" name="title" value="'+($('#hiddn').val())+'">';
 		body = body + "</div>";
 		$('input#body').val(body);
 		console.log($('input#body').val());
 		$('input#title').val($('title').html());
 		$('input#stylesheet').val($('link').attr('href'));
 		$('input#script').val($('script#main').attr('src'));
+<<<<<<< Updated upstream
+=======
+		$("input#tit").val($('#hiddn').val());
+		// console.log(ct);
+		$("input#count").val(ct);
+>>>>>>> Stashed changes
 		$('#target').submit();
 	})
 })
+
+
+
+
+
+
+

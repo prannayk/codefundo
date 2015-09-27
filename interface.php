@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
+	<link rel="stylesheet" href="http://yui.yahooapis.com/pure/0.6.0/pure-min.css">
 	<title>Interface Addition</title>
 	<script type="text/javascript" src="script/jq.js"></script>
 	<script type="text/javascript">

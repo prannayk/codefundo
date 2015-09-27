@@ -1,13 +1,40 @@
+<html>
+<head>
+<link rel="stylesheet" href="http://yui.yahooapis.com/pure/0.6.0/pure-min.css">
 
- <!DOCTYPE html>
- <html>
- <head>
- 	<title>Test</title>
- 	<link rel="stylesheet" type="text/css" href="css/test.cs">
- </head>
- <body>
- 	<form action="submit.php" method="POST">
- 		<div class='main'><p>Question</p><input type="text" name="text1"/><p>Question</p><input type="text" name="text2"/><select> <option>--Select--</option><option value="jnnjkn">jnnjkn</option><option value="jnjknjkn">jnjknjkn</option><option value="jnjknjkn">jnjknjkn</option></select><label for="check11">Questionjnjknjkn</label><input type="checkbox" name="check11" /><br><label for="check15">Questionjnjknnmn,mjkn</label><input type="checkbox" name="check15" /><br><label for="check16"></label><input type="checkbox" name="check16" /><br><input type="hidden" name="title" value="jkjgjhb"></div> 		<input type="submit" />
- 	</form>
- </body>
- </html>
+<title>Test</title>
+</head>
+<body>
+
+
+<form class="pure-form pure-form-stacked" action="submit.php" method="POST">
+<div class="main" ">
+    
+        <label for="q1"> Question_1</label><br>
+        <input type="text" name="text1" placeholder="Answer1"/><br>
+        <label for="q2"> Question_2</label><br>
+        <input type="text" name="text2" placeholder="Answer2"><br>
+        <label for="opt">Options</label><br>
+        <select id="opt">
+            <option value="1">1</option>
+            <option value="2">2</option>
+            <option value="3">3</option>
+        </select><br>
+
+
+<label for="check11" class="pure-checkbox"><br>
+<input id="op1" type="checkbox">Opinion1
+</label>
+                
+<label for="check11" class="pure-checkbox"><br>
+<input id="op2" type="checkbox">Opinion2<br>
+</label>
+
+
+        
+        <button type="submit" class="pure-button pure-button-primary">Submit</button><br>
+    </fieldset>
+</form>
+</p>
+</body>
+</html>

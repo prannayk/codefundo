@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
+	<link rel="stylesheet" type="text/css" href="css/style.css">
 	<title>Simulation</title>
 </head>
 <body>
@@ -31,11 +32,21 @@
 ?>
 
 
-<form method="POST" action="user.php">
+<form method="POST" action="user.php" class="form-1">
+<p class="field">
 	<input type="text" name="username" placeholder="Username" />
+        <i class="icon-user icon-large"></i>
+</p>
+<p class="field">
 	<input type="password" name="password" placeholder="Password" />
+        <i class="icon-lock icon-large"></i>
+</p>
+<p class="submit">
 	<input type="hidden" name="incoming" value = "5" />
-	<input type="submit" value="ROLL" />
+        <button type="submit" name="submit" value="" />	
+        <i class="icon-arrow-right icon-large">
+</i>
+</p>
 </form>
  <?php
 }else { 

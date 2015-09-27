@@ -33,7 +33,6 @@
 			}
 			if($some3==0 || $some3=="0"){
 				$some2 = intval($some2);
-				// var_dump($some2);
 				$que = "CREATE TABLE ".$some." ( id INT(6) UNSIGNED AUTO_INCREMENT PRIMARY KEY";
 				for ($i=1; $i <= $some2 ; $i++) { 
 					// print_r('expression');

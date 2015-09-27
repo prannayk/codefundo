@@ -5,7 +5,6 @@
 		$my = new MySQL();
 		unset($_POST['incoming']);
 		$_POST['password'] = md5($_POST['password']);
-		// var_dump($_POST);
 		$my->Select("student",array('studentid'),$_POST);
 		if($my->iAffected){
 			// print_r('expression');

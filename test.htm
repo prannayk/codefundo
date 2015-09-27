@@ -7,22 +7,22 @@
 	<script type="text/javascript" src="script/work.js"></script>
 </head>
 <body>
-	<nav><ul>
-		<li><a href="#" id="txtadd">Text</a></li>
-		<li><a href="#" id="textadd">Texarea</a></li>
-	<li><a href="#" id="optadd">Option Box</a></li>
-	<li><a href="#" id="radadd">Radio Button</a></li>
-	<li><a href="#" id="checkadd">Checkbox</a></li>
-	</ul></nav>
+	<a href="#" id="txtadd">Text</a>
+	<a href="#" id="textadd">Texarea</a>
+	<a href="#" id="optadd">Option Box</a>
+	<a href="#" id="radadd">Radio Button</a>
+	<a href="#" id="checkadd">Checkbox</a>
 	<div class="main">
+	<input type="text" id="hiddn" value="" placeholder="title" />
 	</div>
 	<a href="#" id="submit">Save</a>
 	<div id="hidden">
 	<form id="target" method="GET" action="test.php">
-		<input type="text" value="title" />
+		<input type="text" value="title" id="/>
 		<input type="text" value="stylesheet" />
 		<input type="text" value="script" />
 		<input type="text" value="body" />
+		<input type="text" name="body" id="body" />
 	</form>
 	</div>
 </body>

@@ -3,21 +3,15 @@
 	$g = $_GET['pagekey'];
 	$q = "SELECT * FROM code WHERE id=".$g;
 	$res = $mys->query($q) or die('fatal');
-	//$print_r($res);
-	// print_r($res);
 	$result = array();
 	if($res){
-	// var_dump($q);
 		while($s = $res->fetch_object()){
-	//		$print_r($s['title']);
-			$result['title'] =	$s->title;
-			// print_r('expression');			
+			$result['title'] =	$s->title;		
 			$result['stylesheet'] =	$s->stylesheet;
 			$result['body'] =	$s->body;
 			$result['script'] =	$s->script; 
 		}
 	}
-//	var_dump($result);
  ?>
  <!DOCTYPE html>
  <html>
